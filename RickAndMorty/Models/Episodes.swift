@@ -20,4 +20,9 @@ struct EpisodeModel: Codable {
     let url: String
     let created: String
     
+    
+    enum CodingKeys: String, CodingKey {
+        case id, name, episode, characters, url, created
+        case airDate = "air_date"
+    }
 }
