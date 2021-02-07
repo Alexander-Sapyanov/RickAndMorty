@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  EpisodeViewController.swift
 //  RickAndMorty
 //
 //  Created by Alexander  Sapianov on 07.02.2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class EpisodeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
