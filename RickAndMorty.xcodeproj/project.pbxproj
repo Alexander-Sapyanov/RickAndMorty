@@ -11,6 +11,10 @@
 		114F972225CE84A700B66058 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114F972125CE84A700B66058 /* SceneDelegate.swift */; };
 		114F972925CE84AC00B66058 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 114F972825CE84AC00B66058 /* Assets.xcassets */; };
 		114F97D725CFFA1D00B66058 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114F97D625CFFA1D00B66058 /* ViewController.swift */; };
+		114F97DD25CFFCE600B66058 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114F97DC25CFFCE600B66058 /* CharacterModel.swift */; };
+		114F97E125CFFE9C00B66058 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114F97E025CFFE9C00B66058 /* LocationModel.swift */; };
+		114F97E425D0003B00B66058 /* EpisodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114F97E325D0003B00B66058 /* EpisodeModel.swift */; };
+		114F97EE25D01A4A00B66058 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114F97ED25D01A4A00B66058 /* Networking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,10 @@
 		114F972825CE84AC00B66058 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		114F972D25CE84AC00B66058 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		114F97D625CFFA1D00B66058 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		114F97DC25CFFCE600B66058 /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
+		114F97E025CFFE9C00B66058 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		114F97E325D0003B00B66058 /* EpisodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeModel.swift; sourceTree = "<group>"; };
+		114F97ED25D01A4A00B66058 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,13 +60,49 @@
 		114F971E25CE84A700B66058 /* RickAndMorty */ = {
 			isa = PBXGroup;
 			children = (
+				114F97EB25D01A0F00B66058 /* Controllers */,
+				114F97EA25D01A0600B66058 /* Views */,
+				114F97DB25CFFCAF00B66058 /* Models */,
 				114F971F25CE84A700B66058 /* AppDelegate.swift */,
 				114F972125CE84A700B66058 /* SceneDelegate.swift */,
 				114F97D625CFFA1D00B66058 /* ViewController.swift */,
 				114F972825CE84AC00B66058 /* Assets.xcassets */,
 				114F972D25CE84AC00B66058 /* Info.plist */,
+				114F97EC25D01A1600B66058 /* Networking */,
 			);
 			path = RickAndMorty;
+			sourceTree = "<group>";
+		};
+		114F97DB25CFFCAF00B66058 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				114F97DC25CFFCE600B66058 /* CharacterModel.swift */,
+				114F97E025CFFE9C00B66058 /* LocationModel.swift */,
+				114F97E325D0003B00B66058 /* EpisodeModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		114F97EA25D01A0600B66058 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		114F97EB25D01A0F00B66058 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		114F97EC25D01A1600B66058 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				114F97ED25D01A4A00B66058 /* Networking.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,8 +174,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				114F97D725CFFA1D00B66058 /* ViewController.swift in Sources */,
+				114F97DD25CFFCE600B66058 /* CharacterModel.swift in Sources */,
 				114F972025CE84A700B66058 /* AppDelegate.swift in Sources */,
+				114F97E125CFFE9C00B66058 /* LocationModel.swift in Sources */,
 				114F972225CE84A700B66058 /* SceneDelegate.swift in Sources */,
+				114F97EE25D01A4A00B66058 /* Networking.swift in Sources */,
+				114F97E425D0003B00B66058 /* EpisodeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
