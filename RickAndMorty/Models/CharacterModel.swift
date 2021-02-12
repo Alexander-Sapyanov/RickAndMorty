@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct ChatacterModel: Codable {
+struct CharacterModel: Codable {
     var info: Info
-    var results: Character
+    var results: [Character]
 }
 
 
