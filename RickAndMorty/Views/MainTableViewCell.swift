@@ -36,7 +36,7 @@ class MainTableViewCell: UITableViewCell {
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = .clear
-        label.textColor = .white
+        label.textColor = .blue
         return label
     }()
     
@@ -80,7 +80,7 @@ class MainTableViewCell: UITableViewCell {
         nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 15).isActive = true
         nameLabel.leftAnchor.constraint(equalTo: someImage.rightAnchor, constant: 15).isActive = true
         nameLabel.widthAnchor.constraint(equalTo: nameLabel.widthAnchor).isActive = true
-        nameLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    
         nameLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         
         planetLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 15).isActive = true

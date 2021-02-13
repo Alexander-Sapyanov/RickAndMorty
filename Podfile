@@ -7,5 +7,6 @@ target 'RickAndMorty' do
 
   # Pods for RickAndMorty
 pod 'SDWebImage', '~> 5.0'
+pod 'AnimatedTabBar'
 
 end

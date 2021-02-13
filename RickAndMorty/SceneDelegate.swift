@@ -6,24 +6,44 @@
 //
 
 import UIKit
+import  AnimatedTabBar
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    
+    
+    fileprivate var items: [AnimatedTabBarItem] = {
+        
+        var items = [AnimatedTabBarItem]()
+        let itemOne = AnimatedTabBarItem(icon: UIImage(named: "1")!, title: "MapKit", controller: ViewController())
+        items.append(itemOne)
+        
+        let itemTwo = AnimatedTabBarItem(icon: UIImage(named: "1")!, title: "Setting", controller: ViewController())
+        items.append(itemTwo)
+        
+        let itemThree = AnimatedTabBarItem(icon: UIImage(named: "1")!, title: "Favs", controller: ViewController())
+        items.append(itemThree)
+        return items
+    }()
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let windowScene = (scene as? UIWindowScene) else { return }
+        guard let _ = (scene as? UIWindowScene) else { return }
+        window = UIWindow(windowScene: scene as! UIWindowScene)
         
-        let window = UIWindow(windowScene: windowScene)
-        let nc = UINavigationController(rootViewController: ViewController())
-        window.rootViewController =  nc
         
-        self.window = window
-        window.makeKeyAndVisible()
+        let tabBar = AnimatedTabBarController()
+    
+        
+        
+        tabBar.delegate = self
+    
+        
+        
+        
+        window?.rootViewController = tabBar
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -57,3 +77,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+extension SceneDelegate: AnimatedTabBarDelegate {
+    var numberOfItems: Int {
+        return items.count
+    }
+    
+    func tabBar(_ tabBar: AnimatedTabBar, itemFor index: Int) -> AnimatedTabBarItem {
+        return items[index]
+    }
+    
+    func initialIndex(_ tabBar: AnimatedTabBar) -> Int? {
+        return 0
+    }
+    
+    
+    
+}

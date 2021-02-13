@@ -74,7 +74,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.locationLabel.text = characters[indexPath.row].location.name
         let url = URL(string: characters[indexPath.row].image)
         cell.someImage.sd_setImage(with: url,placeholderImage: UIImage(named: "1"),options: [.continueInBackground,.progressiveLoad],completed: nil)
-        cell.backgroundColor = .red
+
         return cell
     }
     
