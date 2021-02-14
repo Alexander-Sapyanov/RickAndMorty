@@ -8,19 +8,16 @@
 import UIKit
 
 class MainTableViewCell: UITableViewCell {
-    
     static let identifier = "MainTableViewCell"
-
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
         addViews()
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     var someImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "1")
@@ -41,7 +38,6 @@ class MainTableViewCell: UITableViewCell {
     }()
     
     let planetLabel: UILabel = {
-       
         let label = UILabel()
         label.font = UIFont(name: "Helvetica", size: 15)
         label.textAlignment = .right
@@ -49,10 +45,9 @@ class MainTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = .clear
         label.textColor = .black
-        
         return label
     }()
-    
+
     var locationLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Helvetica", size: 18)
@@ -62,8 +57,6 @@ class MainTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
-    
     
     func addViews(){
         addSubview(someImage)
@@ -80,7 +73,6 @@ class MainTableViewCell: UITableViewCell {
         nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 15).isActive = true
         nameLabel.leftAnchor.constraint(equalTo: someImage.rightAnchor, constant: 15).isActive = true
         nameLabel.widthAnchor.constraint(equalTo: nameLabel.widthAnchor).isActive = true
-    
         nameLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         
         planetLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 15).isActive = true
@@ -92,9 +84,5 @@ class MainTableViewCell: UITableViewCell {
         locationLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5).isActive = true
         locationLabel.widthAnchor.constraint(equalTo: locationLabel.widthAnchor).isActive = true
         locationLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        
-        
-        
-        
     }
 }

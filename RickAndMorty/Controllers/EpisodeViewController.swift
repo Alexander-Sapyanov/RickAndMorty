@@ -9,21 +9,44 @@ import UIKit
 
 class EpisodeViewController: UIViewController {
 
+    let client = Client()
     var episodeTableView: UITableView!
-    
     var episodes: [EpisodeResults] = []
+    var currentPageCharacter = 1
+    private var infoEpisodes: EpisodeInfo!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setUpTableView()
         fetchEpisodes()
     }
     
+    // MARK: - Functions
+    func fetchEpisodes() {
+        client.episode().fetchEpisodes(byPageNumber: currentPageCharacter) { [unowned self] (result) in
+            switch result.self {
+            case .success(let episodes):
+                DispatchQueue.main.async {
+                    self .infoEpisodes = episodes.info
+                    self.episodes.append(contentsOf: episodes.results)
+                    print(self.episodes.count)
+                    self.currentPageCharacter += 1
+                    self.episodeTableView.reloadData()
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
     func setUpTableView() {
         episodeTableView = UITableView()
         view.addSubview(episodeTableView)
+        episodeTableView.dataSource = self
+        episodeTableView.delegate = self
+        episodeTableView.register(EpisodesTableViewCell.self, forCellReuseIdentifier: EpisodesTableViewCell.identifier)
+        episodeTableView.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             episodeTableView.topAnchor.constraint(equalTo: view.topAnchor),
             episodeTableView.leftAnchor.constraint(equalTo: view.leftAnchor),
@@ -31,53 +54,35 @@ class EpisodeViewController: UIViewController {
             episodeTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             
         ])
-        episodeTableView.translatesAutoresizingMaskIntoConstraints = false
-    
-        episodeTableView.dataSource = self
-        episodeTableView.delegate = self
-        episodeTableView.register(EpisodesTableViewCell.self, forCellReuseIdentifier: EpisodesTableViewCell.identifier)
-        
-    }
-    
-    func fetchEpisodes() {
-        let url = URL(string: "https://rickandmortyapi.com/api/episode")!
-        
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let data = data else {return}
-            
-            DispatchQueue.main.async {
-                
-                do {
-                    let jsonResult = try JSONDecoder().decode(EpisodeModel.self, from: data)
-                    self.episodes = jsonResult.results
-                    print(self.episodes)
-                    self.episodeTableView.reloadData()
-                }
-                catch {
-                    print("something went wrong")
-                }
-                
-            }
-        }.resume()
     }
 }
 
+// MARK: - Extensions
 extension EpisodeViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return episodes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        if indexPath.row == episodes.count - 1 && currentPageCharacter <= infoEpisodes.pages {
+            let cell = tableView.dequeueReusableCell(withIdentifier: EpisodesTableViewCell.identifier, for: indexPath)
+            self.fetchEpisodes()
+            return cell
+        }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: EpisodesTableViewCell.identifier, for: indexPath) as! EpisodesTableViewCell
-        cell.backgroundColor = .red
         cell.episodeName.text = episodes[indexPath.row].name
+        cell.episodeNumber.text = episodes[indexPath.row].episode
+        cell.prepareForReuse()
         return cell
     }
 }
 
 extension EpisodeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 75
     }
 }
 

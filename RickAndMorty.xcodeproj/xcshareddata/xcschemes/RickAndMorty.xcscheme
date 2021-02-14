@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AE35D7197BEB4C06E1AC68BD7C73C53A"
-               BuildableName = "AnimatedTabBar.framework"
-               BlueprintName = "AnimatedTabBar"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BlueprintIdentifier = "114F971B25CE84A700B66058"
+               BuildableName = "RickAndMorty.app"
+               BlueprintName = "RickAndMorty"
+               ReferencedContainer = "container:RickAndMorty.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -40,6 +40,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "114F971B25CE84A700B66058"
+            BuildableName = "RickAndMorty.app"
+            BlueprintName = "RickAndMorty"
+            ReferencedContainer = "container:RickAndMorty.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -47,6 +57,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "114F971B25CE84A700B66058"
+            BuildableName = "RickAndMorty.app"
+            BlueprintName = "RickAndMorty"
+            ReferencedContainer = "container:RickAndMorty.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

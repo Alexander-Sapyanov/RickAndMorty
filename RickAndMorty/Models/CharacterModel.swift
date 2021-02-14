@@ -8,12 +8,10 @@
 import Foundation
 
 struct CharacterModel: Codable {
-    var info: Info
+    var info: CharacterInfo
     var results: [Character]
 }
-
-
-struct Info: Codable {
+struct CharacterInfo: Codable {
     var count:Int
     var pages: Int
     var next: String?
