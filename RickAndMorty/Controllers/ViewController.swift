@@ -20,7 +20,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         createTableView()
-        createNavigationBar()
         fetchCharacters()
         
     }
@@ -48,7 +47,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     
                     self.datas = jsonResult
                     self.characters = jsonResult.results
-                    print(self.characters)
                     self.tableView.reloadData()
                 }
                 catch {
@@ -56,11 +54,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 }
             }
         }.resume()
-    }
-    
-    func createNavigationBar() {
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.title = "Rick and Morty"
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

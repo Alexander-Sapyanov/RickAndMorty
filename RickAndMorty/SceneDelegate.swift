@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let itemOne = AnimatedTabBarItem(icon: UIImage(named: "1")!, title: "MapKit", controller: ViewController())
         items.append(itemOne)
         
-        let itemTwo = AnimatedTabBarItem(icon: UIImage(named: "1")!, title: "Setting", controller: ViewController())
+        let itemTwo = AnimatedTabBarItem(icon: UIImage(named: "1")!, title: "Setting", controller: EpisodeViewController())
         items.append(itemTwo)
         
         let itemThree = AnimatedTabBarItem(icon: UIImage(named: "1")!, title: "Favs", controller: ViewController())

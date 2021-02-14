@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,8 @@
 		114F97E125CFFE9C00B66058 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114F97E025CFFE9C00B66058 /* LocationModel.swift */; };
 		114F97E425D0003B00B66058 /* EpisodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114F97E325D0003B00B66058 /* EpisodeModel.swift */; };
 		11D3062025D68F3F000B5018 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D3061F25D68F3E000B5018 /* MainTableViewCell.swift */; };
+		11D3064825D8EAC9000B5018 /* EpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D3064725D8EAC9000B5018 /* EpisodeViewController.swift */; };
+		11D3064C25D8F3A2000B5018 /* EpisodesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D3064B25D8F3A2000B5018 /* EpisodesTableViewCell.swift */; };
 		94298F86C84B529257195CB5 /* Pods_RickAndMorty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD600AA5ABF1B8984D222E4 /* Pods_RickAndMorty.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +31,8 @@
 		114F97E025CFFE9C00B66058 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		114F97E325D0003B00B66058 /* EpisodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeModel.swift; sourceTree = "<group>"; };
 		11D3061F25D68F3E000B5018 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		11D3064725D8EAC9000B5018 /* EpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewController.swift; sourceTree = "<group>"; };
+		11D3064B25D8F3A2000B5018 /* EpisodesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesTableViewCell.swift; sourceTree = "<group>"; };
 		7FD30D8930BBA031DC6DAFFD /* Pods-RickAndMorty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickAndMorty.debug.xcconfig"; path = "Target Support Files/Pods-RickAndMorty/Pods-RickAndMorty.debug.xcconfig"; sourceTree = "<group>"; };
 		9022C946981ADCA0291FD07A /* Pods-RickAndMorty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickAndMorty.release.xcconfig"; path = "Target Support Files/Pods-RickAndMorty/Pods-RickAndMorty.release.xcconfig"; sourceTree = "<group>"; };
 		DAD600AA5ABF1B8984D222E4 /* Pods_RickAndMorty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RickAndMorty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				11D3061F25D68F3E000B5018 /* MainTableViewCell.swift */,
+				11D3064B25D8F3A2000B5018 /* EpisodesTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -107,6 +112,7 @@
 		114F97EB25D01A0F00B66058 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				11D3064725D8EAC9000B5018 /* EpisodeViewController.swift */,
 				114F97D625CFFA1D00B66058 /* ViewController.swift */,
 			);
 			path = Controllers;
@@ -118,7 +124,6 @@
 				7FD30D8930BBA031DC6DAFFD /* Pods-RickAndMorty.debug.xcconfig */,
 				9022C946981ADCA0291FD07A /* Pods-RickAndMorty.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -240,6 +245,8 @@
 				11D3062025D68F3F000B5018 /* MainTableViewCell.swift in Sources */,
 				114F97E125CFFE9C00B66058 /* LocationModel.swift in Sources */,
 				114F972225CE84A700B66058 /* SceneDelegate.swift in Sources */,
+				11D3064825D8EAC9000B5018 /* EpisodeViewController.swift in Sources */,
+				11D3064C25D8F3A2000B5018 /* EpisodesTableViewCell.swift in Sources */,
 				114F97E425D0003B00B66058 /* EpisodeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
